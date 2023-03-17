@@ -1,0 +1,71 @@
+{% load static %}
+{% include 'partials/head/head.html' %}
+<body>
+
+    <div class="container2">
+        {% include 'partials/nav/navbar.html' %}
+        <main>
+            <div class="right">
+                <div class="top">
+                    <button class="menu-btn">
+                        <span class="material-icons-sharp">menu</span>
+                    </button>
+                    <div class="profile">
+                        <div class="info">
+                            <p>Hey, <b>AKRIVIA</b></p>
+                            <small class="text-muted">Admin</small>
+                        </div>
+                        <div class="profile-photo">
+                            <img src="{% static 'core/images/AKRIVIA-QUADRADO-Fundo.png' %}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h1>
+                Pagamentos Futuros
+            </h1>
+            <br>
+            <h1>1</h1><p>Encontrados</p>
+            <div class="orders">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Vencimento</th>
+                            <th>Parcelas (R$)</th>
+                            <th>MDR (R$)</th>
+                            <th>Aprovação (R$)</th>
+                            <th>Chargeback (R$)</th>
+                            <th>Cancelamento (R$)</th>
+                            <th>Antecipação (R$)</th>
+                            <th>Split Repassado (R$)</th>
+                            <th>Líquido Parcelas</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script>
+        $('document').ready(function(){
+            $('table').DataTable();
+        })
+    </script>
+</body>
+</html>

@@ -424,6 +424,38 @@ main table tbody tr:last-child td{
     margin-bottom: 1rem;
 }
 
+/* Style DataTable Jquery */
+
+.dataTables_paginate{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.dataTables_paginate a,
+.dataTables_paginate span{
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.dataTables_info{
+    display: none;
+}
+
+.dataTables_length{
+     display: none;   
+}
+
+.dataTables_paginate .current {
+    z-index: 1;
+    color: #fff;
+    background-color: var(--color-dark-variant);
+    border-color: var(--color-dark-variant);
+}
+
+.dataTables_filter{
+    display: none;
+}
+
 /* ============== MEDIA QUERIES ============== */
 @media (max-width: 1200px) {
 

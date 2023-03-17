@@ -55,7 +55,7 @@
     pointer-events: none;
 }
 
-#modal.hide{
+#modal.hidden{
     top: 0;
 }
 

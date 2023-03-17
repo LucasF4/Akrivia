@@ -10,6 +10,8 @@ urlpatterns = [
     path('customers/', views.updateUser, name='customers'),
     path('orders/', views.deleteSurvivor, name='orders'),
     path('login/', views.views, name='views'),
-    path('transacoes/', views.transacoes, name='transacoes')
+    path('transacoes/', views.transacoes, name='transacoes'),
+    path('antecipacao/', views.antecipacao, name='antecipacao'),
+    path('futurepay/', views.futurepay, name='futurepay')
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_URL)

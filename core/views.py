@@ -89,3 +89,15 @@ def transacoes(request):
         return render(request, 'transacoes.html')
     else:
         return redirect('api/v1/survivor/login')
+
+def antecipacao(request):
+    if request.method == 'GET':
+        return render(request, 'antecipacao.html')
+    else:
+        return redirect('api/v1/survivor/login')
+
+def futurepay(request):
+    if request.method == 'GET':
+        return render(request, 'payment.html')
+    else:
+        return redirect('api/v1/survivor/login')

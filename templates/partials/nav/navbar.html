@@ -15,24 +15,21 @@
             <span class="material-icons-sharp">grid_view</span>
             <h3>Dashboard</h3>
         </a>
-        <div class="submenu">
-            <a id="customers" href="{% url 'customers' %}">
-                <span class="material-icons-sharp">person_outline</span>
-                <h3>Conta Interna</h3>
-            </a>
-            <ul>
-                <li>Teste 1</li>
-                <li>Teste 2</li>
-            </ul>
-        </div>
-        
-        <a id="analytics" href="#">
+        <a id="customers" href="{% url 'customers' %}">
+            <span class="material-icons-sharp">person_outline</span>
+            <h3>Conta Interna</h3>
+        </a>
+        <a id="antecipacao" href="{% url 'antecipacao' %}">
             <span class="material-icons-sharp">insights</span>
             <h3>Financeiro</h3>
         </a>
         <a id="transacoes" href="{% url 'transacoes' %}">
             <span class="material-icons-sharp">receipt_long</span>
             <h3>Transações</h3>
+        </a>
+        <a id="futurepay" href="{% url 'futurepay' %}">
+            <span class="material-icons-sharp">payments</span>
+            <h3>Pagamentos Futuros</h3>
         </a>
         <!-- <a id="messages" href="#">
             <span class="material-icons-sharp">mail_outline</span>
