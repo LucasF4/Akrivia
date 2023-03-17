@@ -1,0 +1,285 @@
+{% load static %}
+{% include 'partials/head/head.html' %}
+
+<body>
+
+    <!-- {% if messages %}
+        {% for m in messages %}
+            <div class="alert alert-{{ m.tags }}">
+                {{m}}
+            </div>
+        {% endfor %}
+    {% endif %}
+    
+    <form class="form-outline form-white container mt-5" action="{% url 'dashboard' %}" method="POST">{% csrf_token %}
+        <h3>Cadastro de Sobreviventes</h3>
+        <label class="form-label">Nome: </label>
+        <input class="form-control" name="user_name" type="text" placeholder="Nome" required>
+        <br>
+        <br>
+        <label class="form-label">Idade: </label>
+        <input class="form-control" name="user_age" type="number" placeholder="Idade" required>
+        <br>
+        <br>
+        <label class="form-label">Sexo: </label>
+        <select class="form-control" name="user_sex" required>
+            <option value="Masculino">Masculino</option>
+            <option value="Feminino">Feminino</option>
+            <option value="Outros">Outros</option>
+        </select>
+        <br>
+        <br>
+        <input class="btn btn-primary" type="submit" value="Enviar">
+        <a class="btn btn-success" href="/api/v1/survivor/updateUser/">Editar</a>
+
+    </form>
+        <div class="container p-4 mt-3">
+            <h5>Lista de Sobreviventes</h5>
+            {% if conteudo %}
+            <table id="table" class="table text-center">
+                <thead>
+                  <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Idade</th>
+                    <th scope="col">GeoLocalização</th>
+                  </tr>
+                </thead>
+                <tbody>
+                
+                    {% for item in conteudo %}
+
+                        <tr>
+                            <td>
+                                {{item.user_name}}
+                            </td>
+                            <td>
+                                {{item.user_age}}
+                            </td>
+                            <td>
+                                {{item.user_last_location}}
+                            </td>
+                            <th>
+                                <a href="{% url 'orders' %}?user={{item.user_name}}" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
+                            </th>
+                        </tr>
+
+                    {% endfor %}
+                
+
+                </tbody>
+              </table>
+              {% else %}
+                <div class="d-flex mx-auto">
+                    <p>Não possui sobreviventes cadastrados</p>
+                </div>
+            {% endif %}
+            </div>
+        </div> -->
+
+
+    <div class="container">
+        {% include 'partials/nav/navbar.html' %}
+        <!-- ==== FIM DO ASIDE ==== -->
+
+        <main>
+
+            <h1>Dashboard Operacional</h1>
+
+            <div class="date">
+                <input type="date">
+            </div>
+
+            <div class="insights">
+                <div class="sales">
+                    <span class="material-icons-sharp">analytics</span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Total Diário E-COMMERCE</h3>
+                            <h1>$20,00</h1>
+                            <h3>Total Diário POS</h3>
+                            <h1>$20,00</h1>
+                        </div>
+                        <div class="progress">
+                            <svg>
+                                <circle id="svgcircle" cx="38" cy=38 r="36"></circle>
+                            </svg>
+                            <div class="number">
+                                <p id="percentsvg"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="text-muted">Nas últimas 24 horas</small>
+                </div>
+                <div class="expenses">
+                    <span class="material-icons-sharp">analytics</span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Total Mensal E-COMMERCE</h3>
+                            <h1>$20,00</h1>
+                            <h3>Total Mensal POS</h3>
+                            <h1>$20,00</h1>
+                        </div>
+                        <div class="progress">
+                            <svg>
+                                <circle cx="38" cy=38 r="36"></circle>
+                            </svg>
+                            <div class="number">
+                                <p>50%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="text-muted">Informações dos últimos 30 dias</small>
+                </div>
+                <div class="income">
+                    <span class="material-icons-sharp">bar_chart</span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Transações Gerais E-COMMERCE</h3>
+                            <h1>$20,00</h1>
+                            <h3>Transações Gerais POS</h3>
+                            <h1>$20,00</h1>
+                        </div>
+                        <div class="progress">
+                            <svg>
+                                <circle cx="38" cy=38 r="36"></circle>
+                            </svg>
+                            <div class="number">
+                                <p>75%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="text-muted">Nas últimas 24 horas</small>
+                </div>
+            </div>
+            <br>
+
+            <h1>Dashboard Financeiro</h1>
+
+            <div class="insights">
+                <div class="sales">
+                    <span class="material-icons-sharp">analytics</span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Totais Diários</h3>
+                            <h1>$20,00</h1>
+                            <h3>Totais Diários</h3>
+                            <h1>$20,00</h1>
+                        </div>
+                        <div class="progress">
+                            <svg>
+                                <circle id="svgcircle" cx="38" cy=38 r="36"></circle>
+                            </svg>
+                            <div class="number">
+                                <p>98%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="text-muted">Nas últimas 24 horas</small>
+                </div>
+                <div class="expenses">
+                    <span class="material-icons-sharp">analytics</span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Totais Mensais</h3>
+                            <h1>$20,00</h1>
+                            <h3>Totais Mensais</h3>
+                            <h1>$20,00</h1>
+                        </div>
+                        <div class="progress">
+                            <svg>
+                                <circle cx="38" cy=38 r="36"></circle>
+                            </svg>
+                            <div class="number">
+                                <p>50%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="text-muted">Informações dos últimos 30 dias</small>
+                </div>
+                <div class="income">
+                    <span class="material-icons-sharp">bar_chart</span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Transações Gerais</h3>
+                            <h1>$20,00</h1>
+                            <h3>Transações Gerais</h3>
+                            <h1>$20,00</h1>
+                        </div>
+                        <div class="progress">
+                            <svg>
+                                <circle cx="38" cy=38 r="36"></circle>
+                            </svg>
+                            <div class="number">
+                                <p>75%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="text-muted">Nas últimas 24 horas</small>
+                </div>
+            </div>
+
+            <!-- INÍCIO DA INSIGTHS -->
+            
+        </main>
+        <!-- ==== FIM DA MAIN ==== -->
+
+        <div class="right">
+            <div class="top">
+                <button class="menu-btn">
+                    <span class="material-icons-sharp">menu</span>
+                </button>
+                <div class="profile">
+                    <div class="info">
+                        <p>Hey, <b>AKRIVIA</b></p>
+                        <small class="text-muted">Admin</small>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="{% static 'core/images/AKRIVIA-QUADRADO-Fundo.png' %}">
+                    </div>
+                </div>
+            </div>
+
+            <!-- FIM DO TOP -->
+
+            <div class="recent-info">
+                <h2>Últimas Transações</h2>
+                <div class="info">
+                    <div class="messages" style="display: flex;">
+                        <span class="material-icons-sharp" style="color: orange; margin-right: 5px;">block</span><p><b> ID: 83223</b> - AKRIVIA NEGOCIOS E TECNOLOGIA LTDA - R$ 1,00</p>
+                    </div>
+                    <div class="messages" style="display: flex;">
+                        <span class="material-icons-sharp" style="color: red; margin-right: 5px;">cancel</span><p><b>ID: 83222 </b>- AKRIVIA NEGOCIOS E TECNOLOGIA LTDA - R$ 1,00</p>
+                    </div>
+                    <div class="messages" style="display: flex;">
+                        <span class="material-icons-sharp" style="color: red; margin-right: 5px;">cancel</span><p><b>ID: 83222 </b>- AKRIVIA NEGOCIOS E TECNOLOGIA LTDA - R$ 1,00</p>
+                    </div>
+                    <div class="messages" style="display: flex;">
+                        <span class="material-icons-sharp" style="color: orange; margin-right: 5px;">block</span><p><b> ID: 83223</b> - AKRIVIA NEGOCIOS E TECNOLOGIA LTDA - R$ 1,00</p>
+                    </div>
+                    <div class="messages" style="display: flex;">
+                        <span class="material-icons-sharp" style="color: orange; margin-right: 5px;">block</span><p><b> ID: 83223</b> - AKRIVIA NEGOCIOS E TECNOLOGIA LTDA - R$ 1,00</p>
+                    </div>
+                </div>
+                <a style="text-align: center; display: block; color: #7380ec; margin: 1rem auto;" href="{% url 'transacoes' %}">Ver mais...</a>
+            </div>
+        </div>
+
+        <!-- FIM DO RIGHT -->
+
+    </div>
+    
+</body>
+
+<script src="{% static 'core/js/script.js' %}"></script>
+<script>
+
+    var circle = document.getElementById('svgcircle');
+    var percent = document.getElementById('percentsvg')
+    var number_random = (Math.random() * 100).toFixed();
+    percent.innerHTML = number_random + '%';
+    circle.style.strokeDashoffset = 220 - (220 * number_random) / 100;
+
+
+</script>
+
+</html>

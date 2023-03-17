@@ -1,0 +1,39 @@
+{% include 'partials/head/head.html' %}
+<body>
+
+    {% if messages %}
+        {% for m in messages %}
+            <div class="alert alert-{{m.tags}}">
+                {{ m }}
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <div class="container">
+        {% include 'partials/nav/navbar.html' %}
+
+        <main>
+            <h1>Customers</h1>
+        </main>
+    </div>
+
+    <!-- <form class="form-outline form-white container mt-5" action="{% url 'customers' %}" method="POST" >{% csrf_token %}
+
+        <label>Nome Atual: </label>
+        <input type="text" name="user_name">
+
+        <label>Latitude/Longitude: </label>
+        <input type="text" name="user_last_location"><br>
+
+        <input class="btn btn-primary m-4" type="submit" value="Enviar">
+        <a class="btn btn-success" href="{% url 'dashboard' %}">Voltar</a>
+
+    </form> -->
+    <!-- <div class="container">
+        {% for i in content %}
+            <p>Nome: {{ i.user_name }} <br> Idade: {{ i.user_age }}</p>
+        {% endfor %}
+    </div> -->
+
+</body>
+</html>
