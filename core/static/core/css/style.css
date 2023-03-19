@@ -429,6 +429,7 @@ main table tbody tr:last-child td{
 .dataTables_paginate{
     display: flex;
     justify-content: flex-end;
+    margin-top: 1rem;
 }
 
 .dataTables_paginate a,
