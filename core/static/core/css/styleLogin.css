@@ -104,6 +104,17 @@ body * {
     cursor: pointer;
 }
 
+.text-under {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.text-under > a{
+    color: white;
+}
+
 /* Estilização dos ícones dentro do input */
 
 #icon{

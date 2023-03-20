@@ -1,5 +1,40 @@
 {% load static %}
 {% include 'partials/head/head.html' %}
+<style>
+
+    @media print{
+        main *:not(.orders):not(.orders *){
+            visibility: hidden;
+        }
+
+        .orders{
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .paging_simple_numbers{
+            display: none;
+        }
+
+        main .orders table{
+            background: var(--color-white);
+            width: 100%;
+            border-radius: 0;
+            padding: 0;
+            text-align: center;
+            box-shadow: none;
+            transition: all 300ms ease;
+        }
+
+        .container2{
+            width: 100vw;
+            margin: 0;
+        }
+    }
+
+</style>
 <body>
 
     <div class="container2">
@@ -27,7 +62,7 @@
             <br>
             <div style="display: flex; justify-content: space-between;">
                 <div>
-                    <h1>1</h1><p>Encontrados</p>
+                    <h1>16</h1><p>Encontrados</p>
                 </div>
                 
                 <button id="imprimir" style="background: rgb(169, 34, 40); color: white; cursor: pointer;"><span class="material-icons-sharp">download</span></button>
@@ -38,13 +73,13 @@
                     <thead>
                         <tr>
                             <th>Vencimento</th>
-                            <th>Parcelas (R$)</th>
-                            <th>MDR (R$)</th>
-                            <th>Aprovação (R$)</th>
-                            <th>Chargeback (R$)</th>
-                            <th>Cancelamento (R$)</th>
-                            <th>Antecipação (R$)</th>
-                            <th>Split Repassado (R$)</th>
+                            <th>Parcelas<br>(R$)</th>
+                            <th>MDR<br>(R$)</th>
+                            <th>Aprovação<br>(R$)</th>
+                            <th>Chargeback<br>(R$)</th>
+                            <th>Cancelamento<br>(R$)</th>
+                            <th>Antecipação<br>(R$)</th>
+                            <th>Split Repassado<br>(R$)</th>
                             <th>Líquido Parcelas</th>
                         </tr>
                     </thead>
@@ -60,11 +95,178 @@
                             <th>valores</th>
                             <th>valores</th>
                         </tr>
+                        <tr>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                        </tr>
+                        <tr>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                        </tr>
+                        <tr>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                        </tr>
+                        <tr>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                        </tr>
+                        <tr>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                        </tr>
+                        <tr>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                        </tr>
+                        <tr>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                        </tr>
+                        <tr>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                        </tr>
+                        <tr>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                        </tr>
+                        <tr>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                        </tr>
+                        <tr>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                        </tr>
+                        <tr>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                        </tr>
+                        <tr>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                        </tr>
+                        <tr>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                        </tr>
+                        <tr>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                            <th>valores</th>
+                        </tr>
+                        
                     </tbody>
                 </table>
             </div>
         </main>
     </div>
+    <script src="{% static 'core/js/script.js' %}"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
@@ -79,7 +281,9 @@
         const imprimir = document.getElementById('imprimir')
 
         const teste = () => {
+            $('table').DataTable().destroy()
             window.print()
+            $('table').DataTable().restore()
         }
 
         imprimir.addEventListener('click', () => {

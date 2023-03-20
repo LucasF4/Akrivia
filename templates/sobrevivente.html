@@ -1,3 +1,4 @@
+{% load static %}
 {% include 'partials/head/head.html' %}
 <body>
 
@@ -13,7 +14,23 @@
         {% include 'partials/nav/navbar.html' %}
 
         <main>
-            <h1>Customers</h1>
+            <div class="right">
+                <div class="top">
+                    <button class="menu-btn">
+                        <span class="material-icons-sharp">menu</span>
+                    </button>
+                    <div class="profile">
+                        <div class="info">
+                            <p>Hey, <b>AKRIVIA</b></p>
+                            <small class="text-muted">Admin</small>
+                        </div>
+                        <div class="profile-photo">
+                            <img src="{% static 'core/images/AKRIVIA-QUADRADO-Fundo.png' %}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h1>Conta Interna</h1>
         </main>
     </div>
 
@@ -34,6 +51,6 @@
             <p>Nome: {{ i.user_name }} <br> Idade: {{ i.user_age }}</p>
         {% endfor %}
     </div> -->
-
+    <script src="{% static 'core/js/script.js' %}"></script>
 </body>
 </html>
