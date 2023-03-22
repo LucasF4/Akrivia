@@ -101,3 +101,9 @@ def futurepay(request):
         return render(request, 'payment.html')
     else:
         return redirect('api/v1/survivor/login')
+
+def profile(request):
+    if request.method == 'GET':
+        return render(request, 'profile.html')
+    else:
+        return redirect('api/v1/survivor/login')

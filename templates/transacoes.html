@@ -6,24 +6,16 @@
         {% include 'partials/nav/navbar.html' %}
 
         <main>
-            <div class="right">
-                <div class="top">
-                    <button class="menu-btn">
-                        <span class="material-icons-sharp">menu</span>
-                    </button>
-                    <div class="profile">
-                        <div class="info">
-                            <p>Hey, <b>AKRIVIA</b></p>
-                            <small class="text-muted">Admin</small>
-                        </div>
-                        <div class="profile-photo">
-                            <img src="{% static 'core/images/AKRIVIA-QUADRADO-Fundo.png' %}">
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {% include 'partials/nav/rightmenu.html' %}
             
             <h1>Transações</h1>
+            <br>
+            <div>
+                <div>
+                    <h1>R$ 4,00</h1>
+                    <p>VALOR TOTAL</p>
+                </div>
+            </div>
 
             <div class="orders">
 

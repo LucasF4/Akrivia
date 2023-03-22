@@ -1,0 +1,19 @@
+{% load static %}
+<div class="right">
+    <div class="top">
+        <button class="menu-btn">
+            <span class="material-icons-sharp">menu</span>
+        </button>
+        <div class="profile">
+            <div class="info">
+                <p>Hey, <b>AKRIVIA</b></p>
+                <small class="text-muted">Admin</small>
+            </div>
+            <div class="profile-photo">
+                <a href="{% url 'profile' %}">
+                    <img src="{% static 'core/images/AKRIVIA-QUADRADO-Fundo.png' %}">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

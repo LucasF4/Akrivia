@@ -12,6 +12,7 @@ urlpatterns = [
     path('login/', views.views, name='views'),
     path('transacoes/', views.transacoes, name='transacoes'),
     path('antecipacao/', views.antecipacao, name='antecipacao'),
-    path('futurepay/', views.futurepay, name='futurepay')
+    path('futurepay/', views.futurepay, name='futurepay'),
+    path('profile/', views.profile, name='profile')
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_URL)
