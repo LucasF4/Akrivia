@@ -7,12 +7,14 @@ from django.conf.urls.static import static
 urlpatterns = [
 
     path('dashboard/', views.createSurvivor, name='dashboard'),
-    path('customers/', views.updateUser, name='customers'),
+    path('contaInterna/', views.contaInterna, name='contaInterna'),
     path('orders/', views.deleteSurvivor, name='orders'),
     path('login/', views.views, name='views'),
     path('transacoes/', views.transacoes, name='transacoes'),
     path('antecipacao/', views.antecipacao, name='antecipacao'),
     path('futurepay/', views.futurepay, name='futurepay'),
-    path('profile/', views.profile, name='profile')
+    path('profile/', views.profile, name='profile'),
+    path('repasse/', views.repasse, name='repasse'),
+    path('split/', views.split, name='split')
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_URL)

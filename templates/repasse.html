@@ -1,0 +1,155 @@
+{% load static %}
+{% include 'partials/head/head.html' %}
+<style>
+    .img-print{
+        display: none;
+    }
+    @media print{
+        main *:not(.orders):not(.orders *){
+            display: none;
+        }
+
+        main .orders{
+            position: absolute;
+            top: 0;
+            left: 80px;
+            width: 20%;
+        }
+
+        .img-print{
+            display: flex;
+            text-align: center;
+        }
+
+        .paging_simple_numbers{
+            display: none;
+        }
+
+        main .orders table{
+            background: var(--color-white);
+            width: 100%;
+            border-radius: 0;
+            padding: 0;
+            text-align: center;
+            box-shadow: none;
+        }
+
+        main .orders table tbody tr th,
+        main .orders table thead tr th{
+            border-bottom: 1px solid var(--color-light);
+            padding: .5rem;
+        }
+
+        main .orders table tbody tr:nth-child(odd){
+            background: var(--color-light);
+        }
+    }
+</style>
+<body>
+    <div class="container2">
+        {% include 'partials/nav/navbar.html' %}
+        <main>
+            {% include 'partials/nav/rightmenu.html' %}
+            <h1>
+                Repasses
+            </h1>
+            <br>
+            <div style="display: flex; justify-content: space-between;">
+                <div style="display: flex; gap: 2rem;">
+                    <div>
+                        <h1>2</h1><p>Encontrados</p>
+                    </div>
+                    <div>
+                        <h1>R$ 0,00</h1><p>ACUMULADO EFETIVAMENTE LIQUIDADO</p>
+                    </div>
+                    <div>
+                        <h1>R$ 0,00</h1><p>ACUMULADO COM VALOR NEGATIVO</p>
+                    </div>
+                    <div>
+                        <h1>R$ 0,00</h1><p>ACUMULADO EFETIVAMENTE LIQUIDADO</p>
+                    </div>
+                    <div>
+                        <h1>R$ 0,00</h1><p>ACUMULADO PRORROGADO BAIXO VALOR</p>
+                    </div>
+                    <div>
+                        <h1>R$ 0,00</h1><p>VALOR TOTAL</p>
+                    </div>
+                </div>
+                
+                <button id="imprimir" style="background: rgb(169, 34, 40); color: white; cursor: pointer;"><span class="material-icons-sharp">download</span></button>
+                
+            </div>
+            <div class="orders">
+                <div class="img-print">
+                    <img src="{% static 'core/images/AKRIVIA-QUADRADO-Fundo.png' %}">
+                    <h1>Repasses</h1>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Vencimento</th>
+                            <th>Parcelas<br>(R$)</th>
+                            <th>MDR<br>(R$)</th>
+                            <th>Aprovação<br>(R$)</th>
+                            <th>Chargeback<br>(R$)</th>
+                            <th>Cancelamento<br>(R$)</th>
+                            <th>Antecipação<br>(R$)</th>
+                            <th>Split Repassado<br>(R$)</th>
+                            <th>Líquido Parcelas</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>valores</td>
+                            <td>valores</td>
+                            <td>valores</td>
+                            <td>valores</td>
+                            <td>valores</td>
+                            <td>valores</td>
+                            <td>valores</td>
+                            <td>valores</td>
+                            <td>valores</td>
+                        </tr>
+                        <tr>
+                            <td>valores</td>
+                            <td>valores</td>
+                            <td>valores</td>
+                            <td>valores</td>
+                            <td>valores</td>
+                            <td>valores</td>
+                            <td>valores</td>
+                            <td>valores</td>
+                            <td>valores</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>    
+    <script src="{% static 'core/js/script.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script>
+        $('document').ready(function(){
+            $('table').DataTable({
+                responsive: true
+            });
+        })
+
+        const imprimir = document.getElementById('imprimir')
+
+        const teste = () => {
+            $('table').DataTable().destroy()
+            window.print()
+            $('table').DataTable().restore()
+        }
+
+        imprimir.addEventListener('click', () => {
+            teste()
+            //console.log('Cliquei')
+        })
+    </script>
+</body>
+</html>

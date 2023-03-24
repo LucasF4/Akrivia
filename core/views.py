@@ -41,9 +41,9 @@ def createSurvivor(request):
 
             return redirect('/api/v1/survivor/create/')
 
-def updateUser(request):
+def contaInterna(request):
     if request.method == 'GET':
-        return render(request, 'sobrevivente.html')
+        return render(request, 'contaInterna.html')
     else:
         user_name = request.POST['user_name']
         user_last_location = request.POST['user_last_location']
@@ -105,5 +105,17 @@ def futurepay(request):
 def profile(request):
     if request.method == 'GET':
         return render(request, 'profile.html')
+    else:
+        return redirect('api/v1/survivor/login')
+
+def repasse(request):
+    if request.method == 'GET':
+        return render(request, 'repasse.html')
+    else:
+        return redirect('api/v1/survivor/login')
+
+def split(request):
+    if request.method == 'GET':
+        return render(request, 'split.html')
     else:
         return redirect('api/v1/survivor/login')

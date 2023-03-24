@@ -1,5 +1,6 @@
 {% load static %}
 {% include 'partials/head/head.html' %}
+
 <body>
 
     {% if messages %}
@@ -10,16 +11,21 @@
         {% endfor %}
     {% endif %}
 
-    <div class="container">
+    <div class="container2">
         {% include 'partials/nav/navbar.html' %}
 
         <main>
             {% include 'partials/nav/rightmenu.html' %}
             <h1>Conta Interna</h1>
+            
+            
         </main>
     </div>
+    <script src="{% static 'core/js/script.js' %}"></script>
+</body>
+</html>
 
-    <!-- <form class="form-outline form-white container mt-5" action="{% url 'customers' %}" method="POST" >{% csrf_token %}
+<!-- <form class="form-outline form-white container mt-5" action="{% url 'contaInterna' %}" method="POST" >{% csrf_token %}
 
         <label>Nome Atual: </label>
         <input type="text" name="user_name">
@@ -36,6 +42,3 @@
             <p>Nome: {{ i.user_name }} <br> Idade: {{ i.user_age }}</p>
         {% endfor %}
     </div> -->
-    <script src="{% static 'core/js/script.js' %}"></script>
-</body>
-</html>
