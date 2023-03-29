@@ -1,45 +1,25 @@
 {% load static %}
 {% include 'partials/head/head.html' %}
-<style>
-    .img-print{
-        display: none;
-    }
-</style>
 <body>
+
     <div class="container2">
         {% include 'partials/nav/navbar.html' %}
         <main>
             {% include 'partials/nav/rightmenu.html' %}
-            <h1>
-                Split
-            </h1>
-            <br>
-            <div style="display: flex; justify-content: space-between;">
-                <div style="display: flex; gap: 2rem;">
-                    <div>
-                        <h1>2</h1><p>Encontrados</p>
-                    </div>
-                    <div>
-                        <h1>R$ 0,00</h1><p>VALOR TOTAL</p>
-                    </div>
-                </div>
-                
-            </div>
+    
+            <h1>Favoritos</h1>
             <div class="orders">
-                <div class="img-print">
-                    <img src="{% static 'core/images/AKRIVIA-QUADRADO-Fundo.png' %}">
-                    <h1>Splits</h1>
-                </div>
                 <table>
                     <thead>
                         <tr>
-                            <th>Info Adicional</th>
-                            <th>ID Parcela</th>
-                            <th>Nº Parcela</th>
-                            <th>Vencimento</th>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Documento</th>
+                            <th>Banco</th>
+                            <th>Agência</th>
+                            <th>Conta</th>
+                            <th>Tipo de Conta</th>
                             <th>Status</th>
-                            <th>Situação</th>
-                            <th>Valor</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -51,8 +31,10 @@
                             <td>valores</td>
                             <td>valores</td>
                             <td>valores</td>
+                            <td>valores</td>
                         </tr>
                         <tr>
+                            <td>valores</td>
                             <td>valores</td>
                             <td>valores</td>
                             <td>valores</td>
@@ -65,12 +47,30 @@
                 </table>
             </div>
         </main>
-    </div>    
-    <script src="{% static 'core/js/script.js' %}"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    </div>
+</body>
+</html>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-    
-</body>
-</html>
+    <script>
+        $('document').ready(function(){
+            $('table').DataTable({
+                responsive: true
+            });
+        })
+
+        const imprimir = document.getElementById('imprimir')
+
+        const teste = () => {
+            $('table').DataTable().destroy()
+            window.print()
+            $('table').DataTable().restore()
+        }
+
+        imprimir.addEventListener('click', () => {
+            teste()
+            //console.log('Cliquei')
+        })
+    </script>

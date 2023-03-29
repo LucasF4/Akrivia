@@ -21,7 +21,7 @@
 
         <div class="left-login">
             <h2>Boas Vindas<br>Realize seu Login</h2>
-            <img class="left-login-svg" src="{% static 'core/images/businessAnimation.svg' %}" />
+            <img id="svg" class="left-login-svg" src="" />
         </div>
         <div class="right-login">
             
@@ -51,6 +51,16 @@
         </div>
 
     </div>
+
+    <script>
+        
+        var svgs = ["{% static 'core/images/businessAnimation.svg' %}", "{% static 'core/images/businessAnimation-2.svg' %}"];
+        const svg = document.getElementById('svg')
+        var random = Math.floor(Math.random() * svgs.length);
+        console.log(random)
+        svg.src = svgs[random]
+
+    </script>
 
 </body>
 </html>

@@ -15,17 +15,30 @@
             <span class="material-icons-sharp">grid_view</span>
             <h3>Dashboard</h3>
         </a>
-        <a id="contaInterna" href="{% url 'contaInterna' %}">
-            <span class="material-icons-sharp">person_outline</span>
-            <h3>Conta Interna</h3>
-        </a>
         <a id="antecipacao" href="{% url 'antecipacao' %}">
             <span class="material-icons-sharp">insights</span>
             <h3>Financeiro</h3>
         </a>
+        <h3 class="relat">Conta Interna</h3>
+        <a id="contaInterna" href="{% url 'contaInterna' %}">
+            <span class="material-icons-sharp">paid</span>
+            <h3>Pagamento de Boletos</h3>
+        </a>
+        <a id="transferencia" href="{% url 'transferencia' %}">
+            <span class="material-icons-sharp">sync_alt</span>
+            <h3>Transferência</h3>
+        </a>
+        <a id="extrato" href="#">
+            <span class="material-icons-sharp">receipt</span>
+            <h3>Extrato</h3>
+        </a>
+        <a id="comprovante" href="#">
+            <span class="material-icons-sharp">receipt_long</span>
+            <h3>Comprovantes</h3>
+        </a>
         <h3 class="relat">Relatórios</h3>
         <a id="transacoes" href="{% url 'transacoes' %}">
-            <span class="material-icons-sharp">receipt_long</span>
+            <span class="material-icons-sharp">list_alt</span>
             <h3>Transações</h3>
         </a>
         <a id="futurepay" href="{% url 'futurepay' %}">

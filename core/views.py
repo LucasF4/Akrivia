@@ -119,3 +119,15 @@ def split(request):
         return render(request, 'split.html')
     else:
         return redirect('api/v1/survivor/login')
+
+def transferencia(request):
+    if request.method == 'GET':
+        return render(request, 'transferencia.html')
+    else:
+        return redirect('api/v1/survivor/login')
+
+def favoritos(request):
+    if request.method == 'GET':
+        return render(request, 'favoritos.html')
+    else:
+        return redirect('api/v1/survivor/login')

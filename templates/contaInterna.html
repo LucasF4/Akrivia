@@ -1,6 +1,21 @@
 {% load static %}
 {% include 'partials/head/head.html' %}
 
+<style>
+
+    .container2 main form{
+        background: var(--color-white);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--box-shadow);
+        padding: var(--card-padding);
+    }
+
+    .container2 main form input{
+        border-bottom: 1px solid gray;
+        padding: .5rem;
+    }
+</style>
+
 <body>
 
     {% if messages %}
@@ -16,12 +31,42 @@
 
         <main>
             {% include 'partials/nav/rightmenu.html' %}
-            <h1>Conta Interna</h1>
-            
-            
+            <h2>Pagamento de Boletos</h2>
+            <br>
+            <form style="display: flex; justify-content: space-around;">
+                <div style="display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; width: 40%;">
+                    <div>
+                        <label for="boleto">Número do Boleto: </label>
+                        <input maxlength="48" name="boleto" type="text" onkeypress="return filtroTeclas(event)">
+                    </div>
+                    <div>
+                        <label for="preco">Valor: </label>
+                        <input name="preco" type="text" onkeypress="$(this).mask('#.##0,00', {reverse: true})">
+                    </div>
+                    <div style="margin: 10px 0;">
+                        <label for="data">Data de Vencimento: </label>
+                        <input type="date">
+                    </div>
+                    <div>
+                        <button style="background: rgb(35, 183, 229); color:white; padding: 10px; border-radius: .6rem;">Verificar</button>
+                    </div>
+                </div>
+                <div>
+                    <textarea placeholder="Observações" style="border: 1px solid black; padding: 2px;" name="obs" id="observacoes" cols="60" rows="5"></textarea>
+                </div>
+            </form>
         </main>
     </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
     <script src="{% static 'core/js/script.js' %}"></script>
+    <script>
+
+        var filtroTeclas = function(event) {
+            return ((event.charCode >= 48 && event.charCode <= 57))
+        }
+
+    </script>
 </body>
 </html>
 

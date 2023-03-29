@@ -15,6 +15,8 @@ urlpatterns = [
     path('futurepay/', views.futurepay, name='futurepay'),
     path('profile/', views.profile, name='profile'),
     path('repasse/', views.repasse, name='repasse'),
-    path('split/', views.split, name='split')
+    path('split/', views.split, name='split'),
+    path('transferencia/', views.transferencia, name='transferencia'),
+    path('favoritos/', views.favoritos, name='favoritos')
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_URL)
