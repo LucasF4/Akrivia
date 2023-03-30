@@ -11,7 +11,7 @@
     }
 
     .container2 main form input{
-        border-bottom: 1px solid gray;
+        border: 1px solid lightblue;
         padding: .5rem;
     }
 </style>
@@ -36,15 +36,15 @@
             <form style="display: flex; justify-content: space-around;">
                 <div style="display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; width: 40%;">
                     <div>
-                        <label for="boleto">Número do Boleto: </label>
+                        <label for="boleto">Número do Boleto:</label><br>
                         <input maxlength="48" name="boleto" type="text" onkeypress="return filtroTeclas(event)">
                     </div>
                     <div>
-                        <label for="preco">Valor: </label>
+                        <label for="preco">Valor:</label><br>
                         <input name="preco" type="text" onkeypress="$(this).mask('#.##0,00', {reverse: true})">
                     </div>
                     <div style="margin: 10px 0;">
-                        <label for="data">Data de Vencimento: </label>
+                        <label for="data">Vencimento:</label><br>
                         <input type="date">
                     </div>
                     <div>
@@ -52,7 +52,7 @@
                     </div>
                 </div>
                 <div>
-                    <textarea placeholder="Observações" style="border: 1px solid black; padding: 2px;" name="obs" id="observacoes" cols="60" rows="5"></textarea>
+                    <textarea placeholder="Observações" style="border: 1px solid lightblue; padding: 2px;" name="obs" id="observacoes" cols="60" rows="5"></textarea>
                 </div>
             </form>
         </main>

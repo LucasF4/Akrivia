@@ -25,7 +25,7 @@ MESSAGE_TAGS = {
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
+SECURE_CROSS_ORIGIN_OPENER_POLICY=None
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
@@ -35,7 +35,7 @@ SECRET_KEY = 'django-insecure-l_fdy2w_o-=5^sj$18-80b#==grs+cukh=^(inkfp^c_186-4m
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.0.19']
 
 
 # Application definition

@@ -1,14 +1,340 @@
 {% load static %}
 {% include 'partials/head/head.html' %}
+<style>
+    
+    .container2 main form{
+        margin: 10px 0;
+        background: var(--color-white);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--box-shadow);
+        padding: 2.5rem;
+        transition: all 300ms ease;
+    }
+
+    .container2 main form:hover{
+        box-shadow: none;
+    }
+
+    .container2 main form .values{
+        display: flex;
+        justify-content: space-around;
+        border-bottom: 1px solid var(--color-light);
+        padding: 1rem;
+    }
+
+    .container2 main form input,
+    .container2 main form select{
+        border: 1px solid lightblue;
+        padding: .5rem;
+    }
+
+    .container2 main form div > h2{
+        display: inline-block;
+    }
+
+    .container2 main .fisrt-form div > h2:first-child{
+        color: red;
+    }
+
+    .container2 main .fisrt-form div div:last-child h2{
+        color: black;
+    }
+
+    .container2 main .second-form div:nth-child(2) > h2:first-child,
+    .container2 main .second-form div:nth-child(1) > h2:first-child{
+        color: red;
+    }
+
+    .container2 main .second-form div div:last-child h2{
+        color: orange;
+    }
+
+    .container2 main .fisrt-form .document div input{
+        margin: 10px 0;
+        width: 35vw;
+    }
+
+    .container2 main .second-form .document div input{
+        margin: 10px 0;
+        width: 25vw;
+    }
+
+    .container2 main form .document div select{
+        margin: 10px 0;
+        width: 37vw;
+    }
+    
+    @media (max-width: 1863px) {
+        .container2 main .fisrt-form .document div input{
+            width: 25vw;
+        }
+    }
+
+    @media (max-width: 845px) {
+        .container2 main .fisrt-form .document div input{
+            width: 23vw;
+        }
+    }
+
+    @media (max-width: 768px){
+        .container2{
+            width: 100%;
+            grid-template-columns: 1fr;
+        }
+        .container2 main form{
+            display: block;
+        }
+    }
+</style>
 <body>
     <div class="container2">
         {% include 'partials/nav/navbar.html' %}
         <main>
             {% include 'partials/nav/rightmenu.html' %}
 
-            <h1>Transferência</h1>
-            
+            <h1>Transferências</h1>
+            <form class="fisrt-form" action="#lavai">
+                <h3>Transferência entre Contas Internas</h3><br>
+                <div class="values">
+                    <div>
+                        <h2>0</h2><h2> / 15.000.000,00</h2>
+                        <p>LIMITE DIÁRIO</p>
+                    </div>
+                    <div>
+                        <h2>0</h2><h2> / 100</h2>
+                        <p>OPERAÇÕES</p>
+                    </div>
+                    <div>
+                        <h2>15.000.000,00</h2>
+                        <p>VALOR MÁXIMO DA OPERAÇÃO</p>
+                    </div>
+                </div>
+                <div class="document" style="padding: 20px; display: flex; align-items: end; justify-content: space-evenly;">
+                    <div>
+                        <label>Documento Destino</label><br>
+                        <input maxlength="19" placeholder="Documento" type="text" onkeypress="$(this).mask('##.###.###/####-###')">
+                    </div>
+                    <div style="margin: 0 15px; display: inline-block;">
+                        <button type="submit"><span class="material-icons-sharp" style="cursor: pointer; background: rgb(35, 183, 229); color:white; padding: 10px; border-radius: .6rem;">search</span></button>
+                    </div>
+                    <div>
+                        <label>Nome do Estabelecimento</label><br>
+                        <input style="background-color: var(--color-light);" placeholder="Estabelecimento" type="text" readonly>
+                    </div>
+                </div>
+            </form>
+            <form id="terceiros" class="second-form" action="#lavai">
+                <h3>TED para Terceiros</h3><br>
+                <div class="values">
+                    <div>
+                        <h2>0</h2><h2> / 15.000.000,00</h2>
+                        <p>LIMITE DIÁRIO</p>
+                    </div>
+                    <div>
+                        <h2>0</h2><h2> / 100</h2>
+                        <p>OPERAÇÕES</p>
+                    </div>
+                    <div>
+                        <h2>15.000.000,00</h2>
+                        <p>VALOR MÁXIMO DA OPERAÇÃO</p>
+                    </div>
+                    <div>
+                        <h2>0,00</h2>
+                        <p>SALDO</p>
+                    </div>
+                </div>
+                <div class="document" style="padding: 20px; display: flex; flex-wrap: wrap; align-items: end; justify-content: space-evenly;">
+                    <div>
+                        <label>Tipo de Pessoa</label><br>
+                        <select style="background-color: var(--color-lig);" name="#" id="person">
+                            <option data-person="1" value="fisica">Pessoa Física</option>
+                            <option data-person="2" value="juridica">Pessoa Jurídica</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Banco</label><br>
+                        <select name="#" id="banco">
+                            <option value="banco1">Banco 1</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Nome</label><br>
+                        <input required placeholder="Nome" type="text">
+                    </div>
+                    <div id="documentacao">
+                        <label>CPF</label><br>
+                        <input required maxlength="14" placeholder="000.000.000-00" type="text" onkeypress="$(this).mask('###.###.###-##')">
+                    </div>
+                    <div>
+                        <label>Tipo de Conta</label><br>
+                        <select style="width: 22vw;" name="#" id="conta">
+                            <option value="corrente">Conta Corrente</option>
+                            <option value="poupanca">Conta Poupança</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Agência</label><br>
+                        <input required maxlength="5" style="width: 12vw;" type="text" onkeypress="return filterNumber(event)">
+                    </div>
+                    <div>
+                        <label>Dígito</label><br>
+                        <input required maxlength="1" style="width: 3vw;" type="text">
+                    </div>
+                    <div>
+                        <label>Conta</label><br>
+                        <input required maxlength="12" style="width: 12vw;" type="text" onkeypress="return filterNumber(event)">
+                    </div>
+                    <div>
+                        <label>Dígito</label><br>
+                        <input required maxlength="1" style="width: 3vw;" type="text">
+                    </div>
+                    <div>
+                        <label>Valor</label><br>
+                        <input required type="text" style="width: 11.5vw;" placeholder="0,00" onkeypress="$(this).mask('#.##0,00', {reverse: true})">
+                    </div>
+                    <div>
+                        <label>Observação</label><br>
+                        <input required maxlength="12" type="text" onkeypress="return filterNumber(event)">
+                    </div>
+                </div>
+                <div style="margin: 0 15px; float: right;">
+                    <button type="button"><span style="cursor: pointer; background: green; color:white; padding: 10px; border-radius: .6rem;">Favoritar</span></button>
+                    <button type="submit"><span style="cursor: pointer; background: rgb(35, 183, 229); color:white; padding: 10px; border-radius: .6rem;">Confirmar</span></button>
+                </div>
+            </form>
+            <form id="estabelecimento" style="display: none;" class="second-form " action="#lavai">
+                <h3>TED Estabelecimento</h3><br>
+                <div class="values">
+                    <div>
+                        <h2>0</h2><h2> / 15.000.000,00</h2>
+                        <p>LIMITE DIÁRIO</p>
+                    </div>
+                    <div>
+                        <h2>0</h2><h2> / 100</h2>
+                        <p>OPERAÇÕES</p>
+                    </div>
+                    <div>
+                        <h2>15.000.000,00</h2>
+                        <p>VALOR MÁXIMO DA OPERAÇÃO</p>
+                    </div>
+                    <div>
+                        <h2>0,00</h2>
+                        <p>SALDO</p>
+                    </div>
+                </div>
+                <div class="document" style="padding: 20px; display: flex; flex-wrap: wrap; align-items: end; justify-content: space-evenly;">
+                    <div>
+                        <label>Tipo de Pessoa</label><br>
+                        <select style="background-color: var(--color-lig);" name="#" id="person">
+                            <option data-person="1" value="fisica">Pessoa Física</option>
+                            <option data-person="2" value="juridica">Pessoa Jurídica</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Banco</label><br>
+                        <select name="#" id="banco">
+                            <option value="banco1">Banco 1</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Nome</label><br>
+                        <input required placeholder="Nome" type="text">
+                    </div>
+                    <div id="documentacao">
+                        <label>CPF</label><br>
+                        <input required maxlength="14" placeholder="000.000.000-00" type="text" onkeypress="$(this).mask('###.###.###-##')">
+                    </div>
+                    <div>
+                        <label>Tipo de Conta</label><br>
+                        <select style="width: 22vw;" name="#" id="conta">
+                            <option value="corrente">Conta Corrente</option>
+                            <option value="poupanca">Conta Poupança</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Agência</label><br>
+                        <input required maxlength="5" style="width: 12vw;" type="text" onkeypress="return filterNumber(event)">
+                    </div>
+                    <div>
+                        <label>Dígito</label><br>
+                        <input required maxlength="1" style="width: 3vw;" type="text">
+                    </div>
+                    <div>
+                        <label>Conta</label><br>
+                        <input required maxlength="12" style="width: 12vw;" type="text" onkeypress="return filterNumber(event)">
+                    </div>
+                    <div>
+                        <label>Dígito</label><br>
+                        <input required maxlength="1" style="width: 3vw;" type="text">
+                    </div>
+                    <div>
+                        <label>Valor</label><br>
+                        <input required type="text" style="width: 11.5vw;" placeholder="0,00" onkeypress="$(this).mask('#.##0,00', {reverse: true})">
+                    </div>
+                    <div>
+                        <label>Observação</label><br>
+                        <input required maxlength="12" type="text" onkeypress="return filterNumber(event)">
+                    </div>
+                </div>
+                <div style="margin: 0 15px; float: right;">
+                    <button type="button"><span style="cursor: pointer; background: green; color:white; padding: 10px; border-radius: .6rem;">Favoritar</span></button>
+                    <button type="submit"><span style="cursor: pointer; background: rgb(35, 183, 229); color:white; padding: 10px; border-radius: .6rem;">Confirmar</span></button>
+                </div>
+            </form>
+            <div style="display: flex; justify-content: center;">
+                <div style="margin: 0 20px;">
+                    <button id="btnTerc" style="border: 1px solid var(--color-light); padding: 1rem; background: var(--color-light);" onclick="hide()">1</button>
+                </div>
+                <div style="margin: 0 20px;">
+                    <button id="btnEstab" style="border: 1px solid var(--color-light); padding: 1rem; background: var(--color-white);" onclick="show()">2</button>
+                </div>
+            </div>
         </main>
     </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="{% static 'core/js/script.js' %}"></script>
+    <script>
+        $(function(){
+            $('#person').on('change', () => {
+                $('#documentacao').empty()
+                var tipo = $(this).find(':selected').data('person');
+                if(tipo == '1'){
+                    $('#documentacao').append(`
+                        <label>CPF</label><br>
+                        <input maxlength="14" placeholder="000.000.000-00" type="text" onkeypress="$(this).mask('###.###.###-##')">
+                    `)
+                }else{
+                    $('#documentacao').append(`
+                        <label>CNPJ</label><br>
+                        <input maxlength="18" placeholder="00.000.000/0000-00" type="text" onkeypress="$(this).mask('##.###.###/####-##')">
+                    `)
+                }
+            })
+        })
+
+        var filterNumber = (event) => {
+            return (event.charCode >= 48 && event.charCode <= 57)
+        }
+
+
+        var estabelecimento = document.getElementById('estabelecimento')
+        var terceiros = document.getElementById('terceiros')
+        var btn1 = document.getElementById('btnTerc')
+        var btn2 = document.getElementById('btnEstab')
+        var show = () => {
+            estabelecimento.style.display = 'block';
+            terceiros.style.display = 'none';
+            btn2.style.background = 'var(--color-light)'
+            btn1.style.background = 'var(--color-white)'
+        }
+
+        var hide = () => {
+            estabelecimento.style.display = 'none';
+            terceiros.style.display = 'block';
+            btn1.style.background = 'var(--color-light)'
+            btn2.style.background = 'var(--color-white)'
+        }
+    </script>
 </body>
 </html>
