@@ -34,7 +34,7 @@
             <h2>Pagamento de Boletos</h2>
             <br>
             <form style="display: flex; justify-content: space-around;">
-                <div style="display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; width: 40%;">
+                <div style="display: flex; justify-content: space-between; align-items: end; flex-wrap: wrap; width: 40%;">
                     <div>
                         <label for="boleto">Número do Boleto:</label><br>
                         <input maxlength="48" name="boleto" type="text" onkeypress="return filtroTeclas(event)">
@@ -43,7 +43,7 @@
                         <label for="preco">Valor:</label><br>
                         <input name="preco" type="text" onkeypress="$(this).mask('#.##0,00', {reverse: true})">
                     </div>
-                    <div style="margin: 10px 0;">
+                    <div style="margin-top: 10px;">
                         <label for="data">Vencimento:</label><br>
                         <input type="date">
                     </div>

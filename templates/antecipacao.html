@@ -48,6 +48,19 @@
         <main>
             {% include 'partials/nav/rightmenu.html' %}
             <h1>Antecipação</h1>
+            <br>
+            <div class="antecipa" style="display: flex; align-items: end; gap: 1rem;">
+                <div>
+                    <label>Data de Antecipação:</label><br>
+                    <input type="date" class="date">
+                </div>
+                <div>
+                    <button style="cursor: pointer; background: rgb(35, 183, 229); color:white; padding: 10px; border-radius: .6rem;">Calcular</button>
+                </div>
+                <div>
+                    <button style="cursor: pointer; background: rgb(35, 183, 229); color:white; padding: 10px; border-radius: .6rem;">Antecipar</button>
+                </div>
+            </div>
             <div class="orders">
                 <div>
                     <table>

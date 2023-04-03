@@ -20,47 +20,27 @@
     <div class="main-login">
 
         <div class="left-login">
-            <h2>Boas Vindas<br>Realize seu Login</h2>
-            <img id="svg" class="left-login-svg" src="" />
+            <h2>Esqueceu sua senha?</h2>
+            <img id="svg" class="left-login-svg" src="{% static 'core/images/forgotAnimation.svg' %}" />
         </div>
         <div class="right-login">
             
             <div class="card-login">
                 <img class="img-login" src="{% static 'core/images/AKRIVIA-QUADRADO-Fundo.png' %}" alt="">
-                <h1>LOGIN</h1>
+                <h1>Recuperação de Senha</h1>
                 <div class="text-field">
                     <label for="estabelecimento">Estabelecimento</label>
                     <input type="text" name="establishment_id" placeholder="Estabelecimento" />
                 </div>
                 <div class="text-field">
-                    <label for="usuario">Usuário</label>
-                    <input type="text" name="login" placeholder="Usuário" />
+                    <label for="senha">E-mail de Recuperação</label>
+                    <input type="email" name="email" placeholder="E-mail" />
                 </div>
-                <div class="text-field">
-                    <label for="senha">Senha</label>
-                    <input type="password" name="password" placeholder="Senha" />
-                </div>    
-                <div class="text-under">
-                    <a href="{% url 'forgot' %}"><span>Esqueceu sua senha?</span></a>
-                </div>
-                <div class="text-under">
-                    <a href="#"><span>Esqueceu seu código?</span></a>
-                </div>
-                <button type="submit" class="btn-login">Login</button>
+                <button type="submit" class="btn-login">Enviar o link de Recuperação</button>
             </div>
         </div>
 
     </div>
-
-    <script>
-        
-        var svgs = ["{% static 'core/images/businessAnimation.svg' %}", "{% static 'core/images/businessAnimation-2.svg' %}"];
-        const svg = document.getElementById('svg')
-        var random = Math.floor(Math.random() * svgs.length);
-        console.log(random)
-        svg.src = svgs[random]
-
-    </script>
 
 </body>
 </html>

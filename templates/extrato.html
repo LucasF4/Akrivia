@@ -1,0 +1,162 @@
+{% load static %}
+{% include 'partials/head/head.html' %}
+<style>
+    .img-print{
+        display: none;
+    }
+
+    .container2 main .values{
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .container2 main .values div h2{
+        display: inline-block;
+    }
+
+    .container2 main .values div:nth-child(1) h2:first-child,
+    .container2 main .values div:nth-child(2) h2:first-child{
+        color: red;
+    }
+
+    .container2 main .values div:last-child h2{
+        color: orange;
+    }
+</style>
+<body>
+
+    <div class="container2">
+        {% include 'partials/nav/navbar.html' %}
+        <main>
+            {% include 'partials/nav/rightmenu.html' %}
+            <h1>Extrato</h1>
+            <div class="values">
+                <div>
+                    <h2>0</h2><h2> / 15.000.000,00</h2>
+                    <p>LIMITE DIÁRIO</p>
+                </div>
+                <div>
+                    <h2>0</h2><h2> / 100</h2>
+                    <p>OPERAÇÕES</p>
+                </div>
+                <div>
+                    <h2>15.000.000,00</h2>
+                    <p>VALOR MÁXIMO DA OPERAÇÃO</p>
+                </div>
+                <div>
+                    <h2>0,00</h2>
+                    <p>SALDO</p>
+                </div>
+            </div>
+            <div class="orders">
+                <div class="img-print">
+                    <img src="{% static 'core/images/AKRIVIA-QUADRADO-Fundo.png' %}">
+                    <h1>Extrato</h1>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Descrição</th>
+                            <th>Valor</th>
+                            <th>Saldo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>valores</td>
+                            <td>valores</td>
+                            <td>valores</td>
+                            <td>valores</td>
+                        </tr>
+                        <tr>
+                            <td>valores</td>
+                            <td>valores</td>
+                            <td>valores</td>
+                            <td>valores</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h1>Comprovantes TED</h1>
+            <div class="orders">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Descrição</th>
+                            <th>Valor</th>
+                            <th>Saldo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>valores</td>
+                            <td>valores</td>
+                            <td>valores</td>
+                            <td>valores</td>
+                        </tr>
+                        <tr>
+                            <td>valores</td>
+                            <td>valores</td>
+                            <td>valores</td>
+                            <td>valores</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h1>Comprovantes de Boletos</h1>
+            <div class="orders">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Descrição</th>
+                            <th>Valor</th>
+                            <th>Saldo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>valores</td>
+                            <td>valores</td>
+                            <td>valores</td>
+                            <td>valores</td>
+                        </tr>
+                        <tr>
+                            <td>valores</td>
+                            <td>valores</td>
+                            <td>valores</td>
+                            <td>valores</td>
+                        </tr>
+                        <tr>
+                            <td>valores</td>
+                            <td>valores</td>
+                            <td>valores</td>
+                            <td>valores</td>
+                        </tr>
+                        <tr>
+                            <td>valores</td>
+                            <td>valores</td>
+                            <td>valores</td>
+                            <td>valores</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+    <script src="{% static 'core/js/script.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script>
+        $('document').ready(() => {
+            $('table').DataTable({
+                responsive: true
+            })
+        })
+    </script>
+</body>
+</html>

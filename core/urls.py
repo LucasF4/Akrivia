@@ -17,6 +17,9 @@ urlpatterns = [
     path('repasse/', views.repasse, name='repasse'),
     path('split/', views.split, name='split'),
     path('transferencia/', views.transferencia, name='transferencia'),
-    path('favoritos/', views.favoritos, name='favoritos')
+    path('favoritos/', views.favoritos, name='favoritos'),
+    path('extrato/', views.extrato, name="extrato"),
+    path('pagfor/', views.pagfor, name="pagfor"),
+    path('forgot/', views.forgot, name="forgot")
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_URL)

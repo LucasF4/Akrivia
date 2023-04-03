@@ -131,3 +131,21 @@ def favoritos(request):
         return render(request, 'favoritos.html')
     else:
         return redirect('api/v1/survivor/login')
+
+def extrato(request):
+    if request.method == 'GET':
+        return render(request, 'extrato.html')
+    else:
+        return redirect('api/v1/survivor/login')
+
+def pagfor(request):
+    if request.method == 'GET':
+        return render(request, 'pagfor.html')
+    else:
+        return redirect('api/v1/survivor/login')
+
+def forgot(request):
+    if request.method == 'GET':
+        return render(request, 'forgot.html')
+    else:
+        return redirect('api/v1/survivor/login')

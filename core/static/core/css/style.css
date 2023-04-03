@@ -469,6 +469,10 @@ main table tbody tr:last-child td{
     display: none;
 }
 
+.right .top .profile a:first-child:not(.profile-photo *){
+    display: none;
+}
+
 /* ============== MEDIA QUERIES ============== */
 @media (max-height: 795px){
     
@@ -489,7 +493,11 @@ main table tbody tr:last-child td{
     }
 
     aside .sidebar a:last-child{
-        top: 510px;
+        display: none;
+    }
+
+    .right .top .profile a:first-child:not(.profile-photo *){
+        display: block;
     }
 }
 

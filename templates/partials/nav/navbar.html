@@ -23,19 +23,19 @@
         <div><h3 class="relat">Conta Interna</h3></div>
         <a id="contaInterna" href="{% url 'contaInterna' %}">
             <span class="material-icons-sharp">paid</span>
-            <h3>Pagamento de Boletos</h3>
+            <h3>Pagamento<br>de Boletos</h3>
         </a>
         <a id="transferencia" href="{% url 'transferencia' %}">
             <span class="material-icons-sharp">sync_alt</span>
             <h3>Transferência</h3>
         </a>
-        <a id="extrato" href="#">
+        <a id="extrato" href="{% url 'extrato' %}">
             <span class="material-icons-sharp">receipt</span>
-            <h3>Extrato</h3>
+            <h3>Extrato<br>Comprovantes</h3>
         </a>
-        <a id="comprovante" href="#">
-            <span class="material-icons-sharp">receipt_long</span>
-            <h3>Comprovantes</h3>
+        <a id="pagfor" href="{% url 'pagfor' %}">
+            <span class="material-icons-sharp">business_center</span>
+            <h3>PagFor</h3>
         </a>
         <div><h3 class="relat">Relatórios</h3></div>
         <a id="transacoes" href="{% url 'transacoes' %}">
